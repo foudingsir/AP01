@@ -1,24 +1,24 @@
 ﻿Shader "AP01/L10/OldSchoolPro" {
     Properties {
-        [Header(Texture)]
-            _MainTex    ("RGB:基础颜色 A:环境遮罩", 2D)     = "white" {}
-            _NormTex	("RGB:法线贴图", 2D)                = "bump" {}
-            _SpecTex    ("RGB:高光颜色 A:高光次幂", 2D)     = "gray" {}
-            _EmitTex    ("RGB:环境贴图", 2d)                = "black" {}
-            _Cubemap    ("RGB:环境贴图", cube)              = "_Skybox" {}
+          [Header(Texture)]
+            _MainTex  ("RGB:基础颜色 A:环境遮罩",2D)  = "white" {}
+            _NormTex ("RGB:法线贴图",2D)          ="bump" {}
+            _SpecTex ("RGN:高光颜色 A:高光次幂",2D)  ="gray"{}
+            _EmitTex("RGB:环境贴图",2D)   ="black"{}
+            _CubeMap("环境贴图",Cube)  ="_Skybox"{}
         [Header(Diffuse)]
-            _MainCol    ("基本色",      Color)              = (0.5, 0.5, 0.5, 1.0)
-            _EnvDiffInt ("环境漫反射强度",  Range(0, 1))    = 0.2
-            _EnvUpCol   ("环境天顶颜色", Color)             = (1.0, 1.0, 1.0, 1.0)
-            _EnvSideCol ("环境水平颜色", Color)             = (0.5, 0.5, 0.5, 1.0)
-            _EnvDownCol ("环境地表颜色", Color)             = (0.0, 0.0, 0.0, 0.0)
+            _MainColor ("环境颜色",Color) =(0.5,0.5,0.5,1)
+            _EnvDiffInt("环境漫反射强度",Range(0,1)) = 0.2
+            _EnvUpCol ("环境天顶颜色",Color) =(1.0,1.0,1.0,1)
+            _EnvSideCol ("环境水平颜色",Color) =(0.5,0.5,0.5,1.0)
+            _EnvDownCol ("环境地表颜色",Color) =(0.0,0.0,0.0,1)
         [Header(Specular)]
-            _SpecPow    ("高光次幂",    Range(1, 90))       = 30
-            _EnvSpecInt ("环境镜面反射强度", Range(0, 5))   = 0.2
-            _FresnelPow ("菲涅尔次幂", Range(0, 5))         = 1
-            _CubemapMip ("环境球Mip", Range(0, 7))          = 0
+            _SpecPow("高光次幂",Range(1,90)) =30;
+            _EnvSpecInt("环境镜面反射强度",Range(0,5)) =0.2
+            _FresnelPow("菲涅尔次幂",Range(0,5)) =1
+            _CubeMapMip("环境球Mip",Range(0,7)) =0
         [Header(Emission)]
-            _EmitInt    ("自发光强度", range(1, 10))         = 1
+            _EmitInt("自发光强度",Range(1,10)) =1
     }
     SubShader {
         Tags {
